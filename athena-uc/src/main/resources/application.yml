@@ -1,0 +1,51 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 5
+
+spring:
+  application:
+    name: ucServer
+  profiles:
+    active: dev
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+server:
+  port: 8080
+
+
+management:
+  security:
+    enabled: false #关掉安全认证
+  context-path: /management #actuator的访问路径　
+
+
+druid:
+  pool:
+    initialSize: 10
+    maxActive: 100
+    minIdle: 10
+
+
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:/com/tangjing/athena/uc/dao/mapper/*.xml
+  typeAliasesPackage: com.tangjing.athena.dao
+  global-config:
+    id-type: 3
+    field-strategy: 2
+    auto-set-db-type: true
+    db-column-underline: true
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
