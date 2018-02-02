@@ -1,6 +1,6 @@
 # athena（雅典娜）java微服务架构+react前后端分离 
 
-## 整体项目采用springclound 分布式框架 
+## 整体项目采用springcloud 分布式框架
 
     模块一览
 |模块名|对应的模块|
@@ -15,8 +15,8 @@
 
 |jar包名称|备注|
 |-|-|
-|spring-cloud-starter-eureka|springclound注册中心|
-|spring-cloud-starter-zuul|springclound注册中心|
+|spring-cloud-starter-eureka|springcloud注册中心|
+|spring-cloud-starter-zuul||
 |spring-boot-devtools|springboot热部署|
 |mybatisplus-spring-boot-starter|mybatis扩展|
 |lombok| 减少java代码量|
