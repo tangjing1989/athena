@@ -1,12 +1,11 @@
 package com.tangjing.athena.uc.entity;
 
-import java.util.Date;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotations.Version;
-
+import com.baomidou.mybatisplus.annotations.TableId;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -18,13 +17,14 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-public class SysUser implements Serializable {
+public class SysUser  implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 用户 ID
      */
+    @TableId
 	private Integer userId;
     /**
      * 用户中文名
@@ -50,6 +50,4 @@ public class SysUser implements Serializable {
      * 修改人
      */
 	private String uptUser;
-
-
 }

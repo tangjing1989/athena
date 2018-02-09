@@ -1,9 +1,9 @@
 package com.tangjing.athena.uc.service.impl;
 
-import com.tangjing.athena.uc.entity.SysUser;
-import com.tangjing.athena.uc.dao.SysUserMapper;
-import com.tangjing.athena.uc.service.ISysUserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.tangjing.athena.uc.dao.SysUserMapper;
+import com.tangjing.athena.uc.entity.SysUser;
+import com.tangjing.athena.uc.service.ISysUserService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +16,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
-	
+
+
+
 }

@@ -1,12 +1,11 @@
 package com.tangjing.athena.uc.entity;
 
-import java.util.Date;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotations.Version;
-
+import com.baomidou.mybatisplus.annotations.TableId;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -25,6 +24,7 @@ public class SysDepartment implements Serializable {
     /**
      * 部门表主键ID
      */
+    @TableId
 	private Integer departmentId;
     /**
      * 部门编码
@@ -55,6 +55,5 @@ public class SysDepartment implements Serializable {
      * 修改人
      */
 	private String uptUser;
-
 
 }

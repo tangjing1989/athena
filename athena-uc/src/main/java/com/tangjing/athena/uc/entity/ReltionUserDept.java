@@ -1,12 +1,11 @@
 package com.tangjing.athena.uc.entity;
 
-import java.util.Date;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotations.Version;
-
+import com.baomidou.mybatisplus.annotations.TableId;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -21,7 +20,7 @@ import lombok.experimental.Accessors;
 public class ReltionUserDept implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+	@TableId
 	private Integer relationUserDeptId;
 	private Integer userId;
 	private Integer roleId;
@@ -41,6 +40,5 @@ public class ReltionUserDept implements Serializable {
      * 修改人
      */
 	private String uptUser;
-
 
 }

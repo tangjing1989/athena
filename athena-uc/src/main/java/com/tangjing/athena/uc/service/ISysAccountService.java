@@ -1,7 +1,9 @@
 package com.tangjing.athena.uc.service;
 
-import com.tangjing.athena.uc.entity.SysAccount;
 import com.baomidou.mybatisplus.service.IService;
+import com.tangjing.athena.common.util.Exception.AthenaServiceException;
+import com.tangjing.athena.uc.entity.SysAccount;
+import com.tangjing.athena.uc.entity.SysUser;
 
 /**
  * <p>
@@ -12,5 +14,8 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2018-02-01
  */
 public interface ISysAccountService extends IService<SysAccount> {
-	
+
+
+     SysUser login( String account , String password) throws AthenaServiceException ;
+
 }

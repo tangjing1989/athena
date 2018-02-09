@@ -4,7 +4,6 @@ package com.tangjing.athena.config;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.baomidou.mybatisplus.enums.DBType;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,12 +21,12 @@ public class MybatisPlusConfig {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
         paginationInterceptor.setDialectType(DBType.MYSQL.getDb());
 //        paginationInterceptor.setOptimizeType(Optimize.JSQLPARSER.getOptimize());
-
         return paginationInterceptor;
     }
 
+
     @Bean
-    public ServletRegistrationBean druidServlet () {
+    public ServletRegistrationBean druidServlet () throws Exception {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean();
         servletRegistrationBean.setServlet(new StatViewServlet());
         servletRegistrationBean.addUrlMappings("/druid/*");

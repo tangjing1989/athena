@@ -12,6 +12,18 @@
     <groupId>com.tangjing.athena</groupId>
     <artifactId>athena-common</artifactId>
     <packaging>jar</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <!-- mybatis-plus begin -->
@@ -53,6 +65,7 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.44</version>
         </dependency>
+
 
         <!-- druid阿里巴巴数据库连接池 -->
         <dependency>

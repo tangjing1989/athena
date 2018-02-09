@@ -1,12 +1,11 @@
 package com.tangjing.athena.uc.entity;
 
-import java.util.Date;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotations.Version;
-
+import com.baomidou.mybatisplus.annotations.TableId;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -18,10 +17,10 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-public class SysMenu implements Serializable {
+public class SysMenu  implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+	@TableId
 	private Integer menuId;
 	private String menuNameCn;
 	private String menuNameEn;
