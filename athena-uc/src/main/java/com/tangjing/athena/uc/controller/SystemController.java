@@ -7,6 +7,7 @@ import com.tangjing.athena.uc.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -34,9 +35,10 @@ public class SystemController {
      * @Date: 06/02/2018
      **/
     @GetMapping ( "/api/login" )
-    public MessageModel login ( String username , String password ) {
+    public MessageModel login ( @RequestParam ( value = "account", required = false ) String account ,
+                                @RequestParam ( value = "password", required = false ) String password ) {
         try {
-            return new MessageModel(true , sysAccountService.login(username , password));
+            return new MessageModel(true , sysAccountService.login(account , password));
         } catch (AthenaServiceException e) {
             return new MessageModel(false , e.getErrConstant());
         }

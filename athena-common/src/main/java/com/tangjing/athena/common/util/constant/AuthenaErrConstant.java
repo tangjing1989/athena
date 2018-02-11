@@ -37,7 +37,8 @@ public class AuthenaErrConstant {
      */
     public enum Uc {
         UC_NOT_FOUNT_USER("0200"  , "用户不存在" , "Not Found User"),
-        UC_PASSWORD_IS_ERROR("0201"   , "登陆密码错误" , "Password Is Error");
+        UC_PASSWORD_IS_ERROR("0201"   , "登陆密码错误" , "Password Is Error"),
+        UC_ACCOUNT_OR_PASSWORD_IS_NULL("0202"   , "账号或密码不能为空" , "Account or Password Is  Null");
         public String code;
         public String cnMessage;
         public String enMessage;

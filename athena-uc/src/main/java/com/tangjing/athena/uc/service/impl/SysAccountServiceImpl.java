@@ -9,6 +9,7 @@ import com.tangjing.athena.uc.entity.SysAccount;
 import com.tangjing.athena.uc.entity.SysUser;
 import com.tangjing.athena.uc.service.ISysAccountService;
 import com.tangjing.athena.uc.service.ISysUserService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,8 @@ public class SysAccountServiceImpl extends ServiceImpl<SysAccountMapper, SysAcco
 
     @Override
     public SysUser login( String account , String password) throws AthenaServiceException {
+        if(StringUtils.isEmpty(account)|| StringUtils.isEmpty(password))
+            throw new AthenaServiceException(AuthenaErrConstant.Uc.UC_ACCOUNT_OR_PASSWORD_IS_NULL.toString());
         EntityWrapper<SysAccount> wrapper =new EntityWrapper<SysAccount>();
         wrapper.where("account_code='"+account+"'");
         if(0==selectCount(wrapper)){
