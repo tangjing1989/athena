@@ -25,6 +25,4 @@ public class MessageModel {
         this.content=object;
     }
 
-
-
 }

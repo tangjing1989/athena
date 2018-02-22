@@ -5,10 +5,7 @@ import com.tangjing.athena.common.util.Exception.AthenaServiceException;
 import com.tangjing.athena.uc.service.ISysAccountService;
 import com.tangjing.athena.uc.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,10 +31,12 @@ public class SystemController {
      * @Author: tangjing
      * @Date: 06/02/2018
      **/
-    @GetMapping ( "/api/login" )
+    @PostMapping ( "/api/login" )
     public MessageModel login ( @RequestParam ( value = "account", required = false ) String account ,
                                 @RequestParam ( value = "password", required = false ) String password ) {
         try {
+            System.out.println("account: "+account);
+            System.out.println("password: "+password);
             return new MessageModel(true , sysAccountService.login(account , password));
         } catch (AthenaServiceException e) {
             return new MessageModel(false , e.getErrConstant());
